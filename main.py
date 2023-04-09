@@ -143,7 +143,6 @@ if __name__ == "__main__":
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
-                pygame.quit()
 
         # paddle movement positioning
         mouse_x, _ = pygame.mouse.get_pos()
@@ -179,9 +178,7 @@ if __name__ == "__main__":
             ball.speed_x = 0
             ball.speed_y = 0
             game_over_text = font.render(f"Game over!", True, (255, 0, 0))
-            game_over()
             screen.blit(game_over_text, (window_width / 2, window_height / 2))
-            running = False
 
         screen.blit(score_text, (10, 10))
         screen.blit(lives_text, (window_width - 100, 10))
@@ -198,4 +195,4 @@ if __name__ == "__main__":
         # sets FPS to 60 max
         clock.tick(60)
 
-
+pygame.quit()
